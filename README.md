@@ -28,10 +28,10 @@ This is a simple Task Management API built with Laravel. It allows users to crea
 
 ### Clone the repository
 
-
+```bash
 git clone https://github.com/DavyL0/desafio-backend-laravel.git
 cd task-management-api
-
+```
 
 ### Install dependecies
 
@@ -46,23 +46,23 @@ Copy the .env.example file to .env
 ## Generate application key
 Run the following command to generate the application key:
 
-bash```
+```bash
 php artisan key:generate
-
+```
 ## Run migrations
 Create the necessary database tables by running:
 
-bash```
+```bash
 php artisan migrate
-
+```
 ## API Endpoints
 
 ### GET /api/tasks
 Retrieve all tasks.
 
 Response
-json
-Copy code
+```json
+
 [
     {
         "id": "uuid",
@@ -74,11 +74,11 @@ Copy code
     },
     ...
 ]
-
+```
 ### POST /api/tasks
 Create a new task.
 
-
+```json
 {
     "title": "New Task",
     "description": "Task description",
@@ -94,10 +94,11 @@ Create a new task.
     "created_at": "2024-12-04T12:00:00.000000Z",
     "updated_at": "2024-12-04T12:00:00.000000Z"
 }
-
+```
 ### GET /api/tasks/{id}
 Retrieve a specific task by ID.
 
+```json
 {
     "id": "uuid",
     "title": "Task Title",
@@ -106,10 +107,12 @@ Retrieve a specific task by ID.
     "created_at": "2024-12-04T12:00:00.000000Z",
     "updated_at": "2024-12-04T12:00:00.000000Z"
 }
+```
 
 ### PUT /api/tasks/{id}
 Update an existing task.
 
+```
 {
     "title": "Updated Task Title",
     "description": "Updated task description",
@@ -124,6 +127,7 @@ Update an existing task.
     "created_at": "2024-12-04T12:00:00.000000Z",
     "updated_at": "2024-12-04T12:00:00.000000Z"
 }
+```
 
 ### DELETE /api/tasks/{id}
 Delete a task by ID.
@@ -134,7 +138,7 @@ Status code: 204 (No Content)
 GET /api/tasks/filter?status={status}
 Filter tasks by status (pending, in_progress, completed).
 
-bash
+```bash
 GET /api/tasks/filter?status=pending
 
 [
@@ -147,12 +151,13 @@ GET /api/tasks/filter?status=pending
         "updated_at": "2024-12-04T12:00:00.000000Z"
     }
 ]
+```
 
 ## Testing
 To run the automated tests for the application, you can use the following command:
-
+```bash
 php artisan test
-
+```
 
 ## Contributing
 Feel free to fork the repository, create issues, or submit pull requests to enhance the functionality of this project. Please ensure that your changes include tests and that all tests pass before submitting a pull request.
